@@ -25,5 +25,11 @@
             "name": "Congo",
             "capital": "Brazaville"
         }
+    ],
+    "users":[
+       {
+        "email": "",
+        "password": ""
+       }
     ]
 }

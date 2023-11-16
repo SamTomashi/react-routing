@@ -7,17 +7,18 @@ import Contact from './pages/Contact';
 import { useEffect, useState } from 'react';
 import Countries from './pages/Countries';
 import Country from './pages/Country';
+import Login from './pages/Login';
  function App() {
 
-  const [countries, setCountries] = useState([])
+    const [countries, setCountries] = useState([])
 
-useEffect(()=> {
-      fetch('http://localhost:3000/countries')
-      .then((response)=> response.json())
-      .then(data => {
-        setCountries(data)
-      })
-}, [])
+    useEffect(()=> {
+          fetch('http://localhost:3000/countries')
+          .then((response)=> response.json())
+          .then(data => {
+            setCountries(data)
+          })
+    }, [])
 
 
 
@@ -31,6 +32,9 @@ useEffect(()=> {
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/countries' element={<Countries countries={countries}/>}></Route>
         {/* <Route path='/countries/:id' element={<Country countries={countries}/>}></Route> */}
+        <Route path='/countries/:id' element={<Country countries={countries} />}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+
       </Routes>
  
     </>
